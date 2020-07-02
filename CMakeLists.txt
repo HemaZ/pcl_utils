@@ -16,6 +16,10 @@ target_link_libraries (pcl_utils_test ${PCL_LIBRARIES})
 #Generate the shared library from the sources
 add_library(pcl_utils SHARED ${SOURCES})
  
+set_target_properties(pcl_utils PROPERTIES PUBLIC_HEADER include/pcl_utils.hpp)
+
 #Set the location for library installation -- i.e., /usr/lib in this case
 # not really necessary in this example. Use "sudo make install" to apply
-install(TARGETS pcl_utils DESTINATION /usr/lib)
+install(TARGETS pcl_utils
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})

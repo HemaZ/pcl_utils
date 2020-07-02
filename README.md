@@ -1,11 +1,17 @@
 # PCL Utils 
 This some helpful PointClouds functions to be used with PCL Library.
 
-## Build:
+## Build: 
 * `mkdir build && cd build`
 * `cmake ..`
 * `sudo make install`
+### Build status:
+| Machine      | Status          |
+|--------------|-----------------|
+| Ubuntu 18.04 | ![Build](https://github.com/HemaZ/pcl_utils/workflows/Build/badge.svg)   |
+| MacOS        |  ![Build](https://github.com/HemaZ/pcl_utils/workflows/Build/badge.svg) |
 
+   
 ## How to use:
  The shared library is installed in `/usr/lib` with name `libpcl_utils.so`
 
