@@ -13,10 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: brew search
-      run: brew search pcl
-    - name: brew info pcl
-      run:  brew info pcl
+    - name: brew install pcl
+      run: brew install pcl
+    - name: brew install pcl
+      run: brew install pcl
+    - name: install PointClouds from source
+      run: git clone https://github.com/PointCloudLibrary/pcl.git && cd pcl && mkdir build && cd build && cmake .. && make install
     - name: mkdir build && cd build && cmake .. && make install
       run: mkdir build && cd build && cmake .. && make install
     
