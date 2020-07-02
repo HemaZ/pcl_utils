@@ -13,8 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: brew install pcl
-      run: brew install pcl
+    - name: brew search
+      run: brew search
+    - name: brew info pcl
+      run:  brew info pcl
     - name: mkdir build && cd build && cmake .. && make install
       run: mkdir build && cd build && cmake .. && make install
     
