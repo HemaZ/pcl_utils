@@ -9,7 +9,7 @@ This some helpful PointClouds functions to be used with PCL Library.
 | Machine      | Status          |
 |--------------|-----------------|
 | Ubuntu 18.04 | ![Build](https://github.com/HemaZ/pcl_utils/workflows/Build/badge.svg)   |
-| MacOS        |  ![Build](https://github.com/HemaZ/pcl_utils/workflows/Build/badge.svg) |
+| MacOS        |  ![MacOS build](https://github.com/HemaZ/pcl_utils/workflows/MacOS%20build/badge.svg) |
 
    
 ## How to use:
