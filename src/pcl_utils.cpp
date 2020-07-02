@@ -26,4 +26,26 @@ pcl::PointCloud<pcl::PointXYZI>::Ptr bin_to_pcd(std::string input_path,
   writer.write(out_path, *output, false);
   return output;
 }
+
+Eigen::Matrix4f icp(pcl::PointCloud<pcl::PointXYZI>::Ptr cloud1,
+                    pcl::PointCloud<pcl::PointXYZI>::Ptr cloud2,
+                    pcl::PointCloud<pcl::PointXYZI>::Ptr aligend_cloud,
+                    double max_dist, int max_iter, double tf_epsilon,
+                    double ed_epislon) {
+
+  pcl::IterativeClosestPoint<pcl::PointXYZI, pcl::PointXYZI> icp;
+  icp.setInputSource(cloud1);
+  icp.setInputTarget(cloud2);
+  icp.setMaxCorrespondenceDistance(max_dist);
+  icp.setMaximumIterations(max_iter);
+  icp.setTransformationEpsilon(tf_epsilon);
+  icp.setEuclideanFitnessEpsilon(ed_epislon);
+  icp.align(*aligend_cloud);
+  std::cout << "has converged:" << icp.hasConverged()
+            << " score: " << icp.getFitnessScore() << std::endl;
+  std::cout << icp.getFinalTransformation() << std::endl;
+
+  return icp.getFinalTransformation();
+}
+
 } // namespace pcl_utils
